@@ -14,7 +14,7 @@ const getKey = () => {
 };
 
 export const isSupabaseConfigured = 
-  Boolean(getUrl() && getUrl() !== 'YOUR_SUPABASE_URL_HERE' && getUrl() !== 'YOUR_SUPABASE_URL' && !getUrl().includes('YOUR_SURPABASE_URL') && getUrl() !== 'https://placeholder.supabase.co');
+  Boolean(getUrl() && getUrl() !== 'YOUR_SUPABASE_URL_HERE' && getUrl() !== 'YOUR_SUPABASE_URL' && !getUrl().includes('YOUR_SUPABASE_URL') && getUrl() !== 'https://placeholder.supabase.co');
 
 export const supabase = createClient(
   isSupabaseConfigured ? getUrl() : 'https://placeholder.supabase.co', 

@@ -54,7 +54,10 @@ export default function UploadMedicine() {
         .from('medicines-images')
         .upload(fileName, file);
 
-      if (uploadError) throw new Error(`فشل رفع الصورة: ${uploadError.message}`);
+      if (uploadError) {
+        console.error('Upload Error:', uploadError);
+        throw new Error(`فشل رفع الصورة: ${uploadError.message}`);
+      }
 
       // 2. Get Public URL
       const { data: { publicUrl } } = supabase.storage
