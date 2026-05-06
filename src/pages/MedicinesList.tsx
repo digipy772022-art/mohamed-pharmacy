@@ -158,11 +158,11 @@ export default function MedicinesList() {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
-            <div className="relative h-48 sm:h-56 bg-slate-100 flex-shrink-0">
+            <div className="relative h-48 sm:h-56 bg-slate-100 flex-shrink-0 p-4">
               <img 
                 src={selectedMedicine.drug_image || "https://via.placeholder.com/400x300?text=لا+توجد+صورة"} 
                 alt={selectedMedicine.drug_name} 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain mix-blend-multiply"
               />
               <button 
                 onClick={() => setSelectedMedicine(null)}
@@ -181,7 +181,7 @@ export default function MedicinesList() {
             <div className="p-5 flex-grow overflow-y-auto space-y-5">
               
               <div className="flex flex-col gap-1.5">
-                <p className="text-sm font-semibold text-slate-500">اسم المتبرع</p>
+                <p className="text-sm font-semibold text-slate-500">صاحب الدواء</p>
                 <div className="flex items-center gap-2 bg-slate-50 border border-slate-100 p-3 rounded-xl">
                   <span className="font-bold text-slate-800 text-base">{selectedMedicine.owner_name}</span>
                 </div>
@@ -227,7 +227,7 @@ export default function MedicinesList() {
                 className="flex-[2] bg-blue-600 text-white py-3 rounded-xl text-base font-bold text-center flex items-center justify-center gap-2 hover:bg-blue-700 hover:-translate-y-0.5 transition-all shadow-md shadow-blue-200"
               >
                 <Phone className="w-5 h-5" />
-                اتصل بالمتبرع الآن
+                اتصل بصاحب الدواء
               </a>
               <button 
                 onClick={() => {
