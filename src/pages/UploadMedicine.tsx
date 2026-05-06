@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { supabase, isSupabaseConfigured } from '../supabaseClient';
-import { Camera, Loader2, CheckCircle2 } from 'lucide-react';
+import { Camera, Loader2, CheckCircle2, PackageCheck } from 'lucide-react';
 
 export default function UploadMedicine() {
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
@@ -78,14 +80,35 @@ export default function UploadMedicine() {
       if (dbError) throw new Error(`فشل حفظ البيانات: ${dbError.message}`);
 
       setSuccess(true);
-      e.currentTarget.reset();
-      setPreview(null);
+      
+      // Auto redirect after 3 seconds
+      setTimeout(() => {
+        navigate('/medicines');
+      }, 3000);
+      
     } catch (err: any) {
       setErrorMsg(err.message || 'حدث خطأ. تأكد من إعدادات Supabase الخاصة بك.');
     } finally {
       setLoading(false);
     }
   };
+
+  if (success) {
+    return (
+      <div className="max-w-2xl mx-auto w-full flex flex-col items-center justify-center my-10 animate-fade-in">
+        <div className="bg-white rounded-3xl border border-slate-200 shadow-xl p-10 flex flex-col items-center text-center max-w-sm w-full">
+          <div className="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mb-6">
+            <PackageCheck className="w-10 h-10" strokeWidth={2} />
+          </div>
+          <h2 className="text-2xl font-bold text-slate-800 mb-2">تم الرفع بنجاح!</h2>
+          <p className="text-slate-500 mb-8 leading-relaxed">
+            جزاك الله خيراً وجعله في ميزان حسناتك.<br />سيتم تحويلك لقائمة الأدوية الآن...
+          </p>
+          <Loader2 className="w-6 h-6 text-emerald-400 animate-spin" />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-2xl mx-auto w-full bg-white rounded-2xl border border-slate-200 shadow-xl p-6 flex flex-col my-4">
@@ -96,13 +119,6 @@ export default function UploadMedicine() {
         <h2 className="text-lg font-bold text-slate-800">رفع دواء متاح</h2>
         <p className="text-sm text-slate-500">ساعد الآخرين بأدويتك الزائدة</p>
       </div>
-
-      {success && (
-        <div className="mb-6 bg-emerald-50 text-emerald-800 p-4 rounded-xl flex items-center gap-3 border border-emerald-200">
-          <CheckCircle2 className="h-6 w-6 text-emerald-600 flex-shrink-0" />
-          <p className="font-medium text-sm">تم رفع الدواء بنجاح. جزاك الله خيراً وجعله في ميزان حسناتك.</p>
-        </div>
-      )}
 
       {errorMsg && (
         <div className="mb-6 bg-red-50 text-red-800 p-4 rounded-xl border border-red-200 text-sm">
@@ -203,3 +219,4 @@ export default function UploadMedicine() {
     </div>
   );
 }
+
