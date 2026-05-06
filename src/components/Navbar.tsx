@@ -6,12 +6,15 @@ export default function Navbar() {
   return (
     <header className="h-16 bg-white border-b border-slate-200 px-4 sm:px-8 flex items-center justify-between flex-none sticky top-0 z-40">
       <div className="flex items-center gap-3">
-        <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center">
-          <Link to="/">
+        <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-slate-50 rounded-xl overflow-hidden border border-emerald-100 p-1">
+          <Link to="/" className="w-full h-full flex items-center justify-center">
             <img 
-              src="/logo.png?v=2" 
+              src="/logo.png" 
               alt="شعار صيدلية اهل الجرنوس" 
-              className="w-full h-full object-contain rounded-full border border-emerald-200 shadow-sm"
+              className="w-full h-full object-contain mix-blend-multiply"
+              onError={(e) => {
+                (e.target as HTMLImageElement).style.display = 'none';
+              }}
             />
           </Link>
         </div>
