@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Download } from 'lucide-react';
-import logo from '../assets/logo.jpg';
+import { logoBase64 } from '../assets/logoData';
 
 export default function Navbar() {
   return (
@@ -10,7 +10,7 @@ export default function Navbar() {
         <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-slate-50 rounded-xl overflow-hidden border border-emerald-100 p-1">
           <Link to="/" className="w-full h-full flex items-center justify-center">
             <img 
-              src={logo} 
+              src={logoBase64} 
               alt="شعار صيدلية اهل الجرنوس" 
               className="w-full h-full object-contain mix-blend-multiply"
             />
