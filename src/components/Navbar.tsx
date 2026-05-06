@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { HeartPulse, Settings } from 'lucide-react';
+import { HeartPulse } from 'lucide-react';
 
 export default function Navbar() {
   return (
@@ -25,10 +25,6 @@ export default function Navbar() {
             رفع دواء جديد
           </Link>
         </div>
-        <Link to="/settings" className="bg-slate-100 text-slate-700 px-3 py-1.5 sm:bg-slate-100 sm:text-slate-700 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-bold whitespace-nowrap hover:bg-slate-200 transition-colors flex items-center gap-1.5">
-          <Settings className="w-4 h-4" />
-          <span className="hidden sm:inline">الإعدادات</span>
-        </Link>
       </nav>
     </header>
   );

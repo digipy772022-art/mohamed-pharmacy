@@ -6,7 +6,6 @@ import BottomNav from './components/BottomNav';
 import Home from './pages/Home';
 import UploadMedicine from './pages/UploadMedicine';
 import MedicinesList from './pages/MedicinesList';
-import Settings from './pages/Settings';
 
 export default function App() {
   return (
@@ -18,7 +17,6 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/upload" element={<UploadMedicine />} />
           <Route path="/medicines" element={<MedicinesList />} />
-          <Route path="/settings" element={<Settings />} />
         </Routes>
       </main>
       <footer className="w-full sm:h-10 bg-slate-800 text-slate-400 flex flex-col sm:flex-row items-center justify-between px-8 py-3 sm:py-0 text-xs flex-none gap-2 sm:gap-0 mt-auto hidden sm:flex">

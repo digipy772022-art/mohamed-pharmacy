@@ -20,7 +20,7 @@ export default function MedicinesList() {
   const fetchMedicines = async () => {
     setLoading(true);
     if (!isSupabaseConfigured) {
-      setError('يرجى إضافة روابط ومفاتيح Supabase من صفحة الإعدادات لكي تعمل قاعدة البيانات.');
+      setError('يرجى إضافة روابط ومفاتيح Supabase في ملف src/supabaseClient.ts لكي تعمل قاعدة البيانات. \n(CONFIG_SUPABASE_URL + CONFIG_SUPABASE_ANON_KEY)');
       setLoading(false);
       return;
     }

@@ -34,12 +34,7 @@ export default function UploadMedicine() {
     const file = formData.get('drug_image') as File;
 
     if (!isSupabaseConfigured) {
-      setErrorMsg(
-        <span className="flex flex-col items-start gap-1">
-          <span>الرجاء إضافة روابط ومفاتيح Supabase.</span>
-          <a href="/settings" className="underline font-bold text-red-700">انتقل لصفحة الإعدادات.</a>
-        </span>
-      );
+      setErrorMsg('الرجاء إضافة روابط ومفاتيح Supabase في ملف src/supabaseClient.ts لكي تعمل قاعدة البيانات.');
       setLoading(false);
       return;
     }

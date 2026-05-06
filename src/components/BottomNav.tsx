@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Home, List, PlusCircle, Settings } from 'lucide-react';
+import { Home, List, PlusCircle } from 'lucide-react';
 
 export default function BottomNav() {
   const location = useLocation();
@@ -9,7 +9,6 @@ export default function BottomNav() {
     { name: 'الرئيسية', path: '/', icon: Home },
     { name: 'الأدوية', path: '/medicines', icon: List },
     { name: 'إضافة', path: '/upload', icon: PlusCircle },
-    { name: 'إعدادات', path: '/settings', icon: Settings },
   ];
 
   return (
