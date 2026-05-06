@@ -9,9 +9,9 @@ export default function Navbar() {
         <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center">
           <Link to="/">
             <img 
-              src="/logo.jpg" 
+              src="/logo.png?v=2" 
               alt="شعار صيدلية اهل الجرنوس" 
-              className="w-full h-full object-cover rounded-full border border-emerald-200 shadow-sm"
+              className="w-full h-full object-contain rounded-full border border-emerald-200 shadow-sm"
             />
           </Link>
         </div>
