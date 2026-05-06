@@ -20,7 +20,7 @@ export default function App() {
         </Routes>
       </main>
       <footer className="w-full sm:h-10 bg-slate-800 text-slate-400 flex flex-col sm:flex-row items-center justify-between px-8 py-3 sm:py-0 text-xs flex-none gap-2 sm:gap-0 mt-auto hidden sm:flex">
-        <p>© {new Date().getFullYear()} صيدلية الخير - منصة خيرية غير ربحية</p>
+        <p>© {new Date().getFullYear()} صيدلية اهل الجرنوس - منصة خيرية غير ربحية</p>
         <div className="flex gap-4">
           <span className="text-emerald-400 font-bold">صنع بنية خالصة للمحتاجين</span>
         </div>

@@ -19,7 +19,7 @@ export default function Home() {
             لا تدع الدواء الفائض <br className="hidden sm:block"/> <span className="text-transparent bg-clip-text bg-gradient-to-l from-emerald-600 to-blue-600">ينتهي بلا فائدة</span>
           </h1>
           <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-xl mx-auto lg:mx-0">
-            صيدلية الخير هي منصة تربط بين من يملك دواءً فائضاً ومن يحتاجه بشدة. ساهم في توفير العلاج واحتسب الأجر في صدقة جارية تنفع الناس.
+            صيدلية اهل الجرنوس هي منصة تربط بين من يملك دواءً فائضاً ومن يحتاجه بشدة. ساهم في توفير العلاج واحتسب الأجر في صدقة جارية تنفع الناس.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 pt-4 justify-center lg:justify-start">
