@@ -154,7 +154,7 @@ export default function MedicinesList() {
           onClick={() => setSelectedMedicine(null)}
         >
           <div 
-            className="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden relative flex flex-col max-h-[85vh]"
+            className="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden relative flex flex-col max-h-[95vh]"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
@@ -221,10 +221,10 @@ export default function MedicinesList() {
             </div>
 
             {/* Modal Footer */}
-            <div className="p-4 border-t border-slate-100 flex gap-3 bg-slate-50 flex-shrink-0">
+            <div className="p-4 border-t border-slate-100 flex flex-col sm:flex-row gap-3 bg-slate-50 flex-shrink-0">
               <a 
                 href={`tel:${selectedMedicine.owner_phone}`}
-                className="flex-[2] bg-blue-600 text-white py-3 rounded-xl text-base font-bold text-center flex items-center justify-center gap-2 hover:bg-blue-700 hover:-translate-y-0.5 transition-all shadow-md shadow-blue-200"
+                className="w-full sm:flex-[2] bg-blue-600 text-white py-3.5 rounded-xl text-base font-bold text-center flex items-center justify-center gap-2 hover:bg-blue-700 hover:-translate-y-0.5 transition-all shadow-md shadow-blue-200"
               >
                 <Phone className="w-5 h-5" />
                 اتصل بصاحب الدواء
@@ -234,7 +234,7 @@ export default function MedicinesList() {
                   handleRequest(selectedMedicine.id, selectedMedicine.drug_image);
                   setSelectedMedicine(null);
                 }}
-                className="flex-1 bg-white border-2 border-emerald-600 text-emerald-600 py-3 rounded-xl text-sm font-bold hover:bg-emerald-50 transition-all flex items-center justify-center"
+                className="w-full sm:flex-1 bg-white border-2 border-emerald-600 text-emerald-600 py-3.5 rounded-xl text-base font-bold hover:bg-emerald-50 transition-all flex items-center justify-center"
               >
                 تم الطلب
               </button>
