@@ -56,6 +56,9 @@ export default function UploadMedicine() {
 
       if (uploadError) {
         console.error('Upload Error:', uploadError);
+        if (uploadError.message === 'Bucket not found') {
+          throw new Error('خطأ: لم يتم العثور على وعاء التخزين. يرجى إنشاء Bucket باسم "medicines-images" في Supabase وجعله Public.');
+        }
         throw new Error(`فشل رفع الصورة: ${uploadError.message}`);
       }
 
