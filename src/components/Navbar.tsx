@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Download } from 'lucide-react';
-import logo from '../assets/logo.png';
+import logo from '../assets/logo.jpg';
 
 export default function Navbar() {
   return (
@@ -13,9 +13,6 @@ export default function Navbar() {
               src={logo} 
               alt="شعار صيدلية اهل الجرنوس" 
               className="w-full h-full object-contain mix-blend-multiply"
-              onError={(e) => {
-                (e.target as HTMLImageElement).style.display = 'none';
-              }}
             />
           </Link>
         </div>
