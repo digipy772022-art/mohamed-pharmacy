@@ -154,11 +154,11 @@ export default function MedicinesList() {
           onClick={() => setSelectedMedicine(null)}
         >
           <div 
-            className="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden relative flex flex-col max-h-[90vh]"
+            className="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden relative flex flex-col max-h-[85vh]"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
-            <div className="relative h-48 sm:h-56 bg-slate-100 flex-shrink-0 p-4">
+            <div className="relative h-40 sm:h-56 bg-slate-100 flex-shrink-0 p-4">
               <img 
                 src={selectedMedicine.drug_image || "https://via.placeholder.com/400x300?text=لا+توجد+صورة"} 
                 alt={selectedMedicine.drug_name} 
@@ -166,19 +166,19 @@ export default function MedicinesList() {
               />
               <button 
                 onClick={() => setSelectedMedicine(null)}
-                className="absolute top-4 right-4 w-8 h-8 bg-white/80 backdrop-blur-md rounded-full flex items-center justify-center text-slate-700 hover:bg-white hover:scale-110 transition-all shadow-sm"
+                className="absolute top-4 right-4 w-8 h-8 bg-white/80 backdrop-blur-md rounded-full flex items-center justify-center text-slate-700 hover:bg-white hover:scale-110 transition-all shadow-sm z-10"
               >
                 ✕
               </button>
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4 pb-3">
-                <h2 className="text-2xl font-bold text-white drop-shadow-md">
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent p-4 pt-12 pb-3">
+                <h2 className="text-xl sm:text-2xl font-bold text-white drop-shadow-md">
                   {selectedMedicine.drug_name}
                 </h2>
               </div>
             </div>
             
             {/* Modal Body */}
-            <div className="p-5 flex-grow overflow-y-auto space-y-5">
+            <div className="p-4 sm:p-5 flex-grow overflow-y-auto min-h-0 space-y-4 sm:space-y-5">
               
               <div className="flex flex-col gap-1.5">
                 <p className="text-sm font-semibold text-slate-500">صاحب الدواء</p>
